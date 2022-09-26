@@ -1,13 +1,23 @@
 # resumeio2pdf
 
-This program downloads resumes from [resume.io](https://resume.io/) and saves them in PDF format (including links).
+This code will download resume from the website [resume.io](https://resume.io/) and saves it as a PDF file in the same folder. (including links).
 
 ## Usage
 
-```bash
+```bash or Terminal (in vscode or any other code editor)
 ./resumeio2pdf [options] [ID or URL]
 ./resumeio2pdf https://resume.io/r/SecureID
 ```
+
+<!-- resumeio2pdf is the fucntion required to call, for downloading your resume.
+     TYPE :      ./resumeio2pdf (url of the resume u want to download)
+ 
+IF IT SHOWS AN ERROR OF - {couldn't recognise resumeio2pdf} - THEN
+
+***   TYPE :           go build
+Downloads all the packages of GO.
+-->
+
 
 Options:
 *  `-pdf` (string)  name of pdf file (default: `SecureID` + `.pdf`)
