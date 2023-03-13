@@ -1,3 +1,5 @@
+// Run (go build) first
+
 package main
 
 import (
@@ -16,6 +18,7 @@ import (
 	"github.com/signintech/gopdf"
 )
 
+// 	Work need to done before downloading the resume as pdf
 const (
 	Version       = "1.0"
 	NameOfProgram = "resumeio2pdf"
@@ -98,6 +101,7 @@ func main() {
 	fmt.Printf("Resume stored to %s\n", *pdfFileName)
 }
 
+// 	Cleaning up the fime before converting it to pdf
 func cleanup(images []string) {
 	for _, file := range images {
 		if _, err := os.Stat(file); os.IsNotExist(err) {
@@ -112,6 +116,7 @@ func cleanup(images []string) {
 	}
 }
 
+// 	Downloads Resume as Pdf
 func generatePDF(info *metaInfo, images []string) error {
 	pdf := gopdf.GoPdf{}
 
@@ -156,6 +161,7 @@ func generatePDF(info *metaInfo, images []string) error {
 	return pdf.WritePdf(*pdfFileName)
 }
 
+// 	When Image form of Resume is needed 
 func getResumeImages(p int) (pages []string, err error) {
 	if p < 1 {
 		return nil, errors.New("required one or more pages")
